@@ -1,5 +1,5 @@
 //
-//  GRAppDelegate.h
+//  ExampleViewController.h
 //  GRGridView
 //
 //  Created by Gabriel Rinaldi on 10/19/12.
@@ -23,11 +23,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+@class GRGridView;
 
-#pragma mark GRAppDelegate
+#pragma mark ExampleViewController
 
-@interface GRAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface ExampleViewController : UIViewController
 
 @end

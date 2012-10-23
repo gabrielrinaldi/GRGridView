@@ -1,5 +1,5 @@
 //
-//  GRAppDelegate.h
+//  GRGridView.h
 //  GRGridView
 //
 //  Created by Gabriel Rinaldi on 10/19/12.
@@ -23,11 +23,26 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#import "GRGridConstraint.h"
 
-#pragma mark GRAppDelegate
+#pragma mark GRGridView
 
-@interface GRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface GRGridView : UIScrollView
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) NSUInteger padding;
+@property (nonatomic) UIEdgeInsets insets;
+@property (nonatomic) CGSize gridSize; // 0 to auto ajust to grid contentSize
+
+- (NSArray *)cells;
+- (UIView <GRGridConstraint> *)cellAtGridPair:(GRGridPair)pair;
+- (void)addCell:(UIView <GRGridConstraint> *)cell; // Don't redraw the layout
+- (void)addCell:(UIView <GRGridConstraint> *)cell animated:(BOOL)animated; // Redraw the layout
+- (void)removeCell:(UIView <GRGridConstraint> *)cell; // Don't redraw the layout
+- (void)removeCell:(UIView <GRGridConstraint> *)cell animated:(BOOL)animated; // Redraw the layout
+- (void)removeCellAtGridPair:(GRGridPair)pair; // Don't redraw the layout
+- (void)removeCellAtGridPair:(GRGridPair)pair animated:(BOOL)animated; // Redraw the layout
+- (void)removeAllCells; // Don't redraw the layout
+- (void)removeAllCellsAnimated:(BOOL)animated; // Redraw the layout
+- (void)layoutViewsAnimated:(BOOL)animated;
 
 @end

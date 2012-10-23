@@ -10,12 +10,11 @@
 		C0620C1E16321C6500793DC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0620C1D16321C6500793DC4 /* UIKit.framework */; };
 		C0620C2016321C6500793DC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0620C1F16321C6500793DC4 /* Foundation.framework */; };
 		C0620C2216321C6500793DC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0620C2116321C6500793DC4 /* CoreGraphics.framework */; };
-		C0620C2816321C6500793DC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0620C2616321C6500793DC4 /* InfoPlist.strings */; };
 		C0620C2A16321C6500793DC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0620C2916321C6500793DC4 /* main.m */; };
 		C0620C2E16321C6500793DC4 /* GRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0620C2D16321C6500793DC4 /* GRAppDelegate.m */; };
-		C0620C3016321C6500793DC4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C0620C2F16321C6500793DC4 /* Default.png */; };
-		C0620C3216321C6500793DC4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0620C3116321C6500793DC4 /* Default@2x.png */; };
-		C0620C3416321C6500793DC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0620C3316321C6500793DC4 /* Default-568h@2x.png */; };
+		C0620C3D16321E4500793DC4 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0620C3C16321E4500793DC4 /* ExampleViewController.m */; };
+		C0620C4116321F1400793DC4 /* GRGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0620C4016321F1400793DC4 /* GRGridView.m */; };
+		C0AC2A5616361EE400EBB005 /* ExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AC2A5516361EE400EBB005 /* ExampleCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,14 +23,17 @@
 		C0620C1F16321C6500793DC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0620C2116321C6500793DC4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0620C2516321C6500793DC4 /* GRGridView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GRGridView-Info.plist"; sourceTree = "<group>"; };
-		C0620C2716321C6500793DC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0620C2916321C6500793DC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0620C2B16321C6500793DC4 /* GRGridView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GRGridView-Prefix.pch"; sourceTree = "<group>"; };
 		C0620C2C16321C6500793DC4 /* GRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRAppDelegate.h; sourceTree = "<group>"; };
 		C0620C2D16321C6500793DC4 /* GRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GRAppDelegate.m; sourceTree = "<group>"; };
-		C0620C2F16321C6500793DC4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		C0620C3116321C6500793DC4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		C0620C3316321C6500793DC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C0620C3B16321E4500793DC4 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		C0620C3C16321E4500793DC4 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
+		C0620C3F16321F1400793DC4 /* GRGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGridView.h; sourceTree = "<group>"; };
+		C0620C4016321F1400793DC4 /* GRGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGridView.m; sourceTree = "<group>"; };
+		C0620C4216321FF500793DC4 /* GRGridConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGridConstraint.h; sourceTree = "<group>"; };
+		C0AC2A5416361EE400EBB005 /* ExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleCell.h; sourceTree = "<group>"; };
+		C0AC2A5516361EE400EBB005 /* ExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +70,9 @@
 		C0620C1C16321C6500793DC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0620C1D16321C6500793DC4 /* UIKit.framework */,
-				C0620C1F16321C6500793DC4 /* Foundation.framework */,
 				C0620C2116321C6500793DC4 /* CoreGraphics.framework */,
+				C0620C1F16321C6500793DC4 /* Foundation.framework */,
+				C0620C1D16321C6500793DC4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,9 +80,12 @@
 		C0620C2316321C6500793DC4 /* GRGridView */ = {
 			isa = PBXGroup;
 			children = (
+				C0620C3E16321EFD00793DC4 /* Classes */,
 				C0620C2C16321C6500793DC4 /* GRAppDelegate.h */,
 				C0620C2D16321C6500793DC4 /* GRAppDelegate.m */,
 				C0620C2416321C6500793DC4 /* Supporting Files */,
+				C0620C3A16321E2600793DC4 /* View Controllers */,
+				C0AC2A5316361EC100EBB005 /* Views */,
 			);
 			path = GRGridView;
 			sourceTree = "<group>";
@@ -89,14 +94,38 @@
 			isa = PBXGroup;
 			children = (
 				C0620C2516321C6500793DC4 /* GRGridView-Info.plist */,
-				C0620C2616321C6500793DC4 /* InfoPlist.strings */,
-				C0620C2916321C6500793DC4 /* main.m */,
 				C0620C2B16321C6500793DC4 /* GRGridView-Prefix.pch */,
-				C0620C2F16321C6500793DC4 /* Default.png */,
-				C0620C3116321C6500793DC4 /* Default@2x.png */,
-				C0620C3316321C6500793DC4 /* Default-568h@2x.png */,
+				C0620C2916321C6500793DC4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0620C3A16321E2600793DC4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0620C3B16321E4500793DC4 /* ExampleViewController.h */,
+				C0620C3C16321E4500793DC4 /* ExampleViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C0620C3E16321EFD00793DC4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C0620C4216321FF500793DC4 /* GRGridConstraint.h */,
+				C0620C3F16321F1400793DC4 /* GRGridView.h */,
+				C0620C4016321F1400793DC4 /* GRGridView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C0AC2A5316361EC100EBB005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0AC2A5416361EE400EBB005 /* ExampleCell.h */,
+				C0AC2A5516361EE400EBB005 /* ExampleCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,10 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0620C2816321C6500793DC4 /* InfoPlist.strings in Resources */,
-				C0620C3016321C6500793DC4 /* Default.png in Resources */,
-				C0620C3216321C6500793DC4 /* Default@2x.png in Resources */,
-				C0620C3416321C6500793DC4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,21 +192,13 @@
 			files = (
 				C0620C2A16321C6500793DC4 /* main.m in Sources */,
 				C0620C2E16321C6500793DC4 /* GRAppDelegate.m in Sources */,
+				C0620C3D16321E4500793DC4 /* ExampleViewController.m in Sources */,
+				C0620C4116321F1400793DC4 /* GRGridView.m in Sources */,
+				C0AC2A5616361EE400EBB005 /* ExampleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C0620C2616321C6500793DC4 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C0620C2716321C6500793DC4 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C0620C3516321C6500793DC4 /* Debug */ = {
@@ -277,6 +294,7 @@
 				C0620C3916321C6500793DC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

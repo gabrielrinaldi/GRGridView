@@ -1,5 +1,5 @@
 //
-//  GRAppDelegate.m
+//  GRGridCellConstraint.h
 //  GRGridView
 //
 //  Created by Gabriel Rinaldi on 10/19/12.
@@ -23,23 +23,49 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "ExampleViewController.h"
+typedef enum {
+    GRGridViewOptionDefault = 0,
+    GRGridViewOptionFixedWidth = (1 << 0),
+    GRGridViewOptionFixedHeight = (1 << 1),
+    GRGridViewOptionFixedSize = GRGridViewOptionFixedWidth | GRGridViewOptionFixedHeight
+} GRGridViewOption;
 
-#pragma mark GRAppDelegate
+typedef struct {
+    NSUInteger row;
+    NSUInteger column;
+} GRGridPair;
 
-@implementation GRAppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [window setBackgroundColor:[UIColor darkGrayColor]];
-    [self setWindow:window];
-
-    ExampleViewController *exampleViewController = [ExampleViewController new];
-    [[self window] setRootViewController:exampleViewController];
-
-    [[self window] makeKeyAndVisible];
-
-    return YES;
+static inline GRGridPair
+GRGridPairMake(NSUInteger row, NSUInteger column) {
+    GRGridPair gridPair; gridPair.row = row; gridPair.column = column; return gridPair;
 }
+
+typedef struct {
+    NSUInteger rows;
+    NSUInteger columns;
+} GRGridSpan;
+
+static inline GRGridSpan
+GRGridSpanMake(NSUInteger rows, NSUInteger columns) {
+    GRGridSpan gridSpan; gridSpan.rows = rows; gridSpan.columns = columns; return gridSpan;
+}
+
+typedef struct {
+    GRGridPair pair;
+    GRGridSpan span;
+} GRGridPosition;
+
+static inline GRGridPosition
+GRGridPositionMake(GRGridPair pair, GRGridSpan span) {
+    GRGridPosition gridPosition; gridPosition.pair = pair; gridPosition.span = span; return gridPosition;
+}
+
+#pragma mark GRGridConstraint
+
+@protocol GRGridConstraint <NSObject>
+
+@property (nonatomic) GRGridPair gridPair;
+@property (nonatomic) GRGridSpan gridSpan;
+@property (nonatomic) NSUInteger options;
 
 @end
