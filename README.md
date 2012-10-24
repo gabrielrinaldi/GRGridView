@@ -15,7 +15,7 @@ Please check the example in the source code.
 
 ## Cocoa Pods
 
-Please don’t add this to CocoaPods, it does not have a release version yet. If you want to use 
+Please don’t add this to CocoaPods, it does not have a release version yet. If you still want to use add `pod 'GRGridView', :git => 'https://github.com/gabrielrinaldi/GRGridView.git'` to your Podfile.
 
 ## LICENSE
 
