@@ -106,7 +106,6 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
 
 - (void)addCell:(UIView <GRGridConstraint> *)cell {
     [_cells addObject:cell];
-    [self addSubview:cell];
 }
 
 - (void)addCell:(UIView <GRGridConstraint> *)cell animated:(BOOL)animated {
@@ -216,6 +215,12 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
             columnWidth = _gridSize.width + [self padding];
         }
 
+        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - 1, 0);
+        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + 1 + firstVisibleRow;
+
+        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - 1, 0);
+        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + 1 + firstVisibleColumn;
+
         for (UIView <GRGridConstraint> *cell in _cells) {
             CGFloat originX = bounds.origin.x + cell.gridPair.column * (columnWidth + [self padding]);
             CGFloat originY = bounds.origin.y + cell.gridPair.row * (rowHeight + [self padding]);
@@ -245,6 +250,11 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
             }
             
             [cell setFrame:newFrame];
+            if (cell.gridPair.row >= firstVisibleRow && cell.gridPair.row <= lastVisibleRow && cell.gridPair.column >= firstVisibleColumn && cell.gridPair.column <= lastVisibleColumn) {
+                [self addSubview:cell];
+            } else {
+                [cell removeFromSuperview];
+            }
         }
 
         [self setContentSize:CGSizeMake((columnWidth * size.columns) + totalColumnGapSpace + self.insets.left + self.insets.right, (rowHeight * size.rows) + totalRowGapSpace + self.insets.top + self.insets.bottom)];
