@@ -215,11 +215,11 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
             columnWidth = _gridSize.width + [self padding];
         }
 
-        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - 1, 0);
-        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + 1 + firstVisibleRow;
+        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - 2, 0);
+        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + 2 + firstVisibleRow;
 
-        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - 1, 0);
-        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + 1 + firstVisibleColumn;
+        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - 2, 0);
+        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + 2 + firstVisibleColumn;
 
         for (UIView <GRGridConstraint> *cell in _cells) {
             CGFloat originX = bounds.origin.x + cell.gridPair.column * (columnWidth + [self padding]);
