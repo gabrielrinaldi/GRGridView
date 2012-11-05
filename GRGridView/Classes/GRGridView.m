@@ -43,6 +43,7 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
 
 - (void)commonInitialization;
 - (GRGridSize)countRowsAndColumns;
+- (GRGridSpan)countMaximumSpan;
 
 @end
 
@@ -190,6 +191,18 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
     return GRGridSizeMake(maxRowIndex + 1, maxColumnIndex + 1);
 }
 
+- (GRGridSpan)countMaximumSpan {
+    NSUInteger maxRowSpan = 0;
+    NSUInteger maxColumnSpan = 0;
+
+    for (UIView <GRGridConstraint> *cell in _cells) {
+        maxRowSpan = MAX(cell.gridSpan.rows, maxRowSpan);
+        maxColumnSpan = MAX(cell.gridSpan.columns, maxColumnSpan);
+    }
+
+    return GRGridSpanMake(maxRowSpan, maxColumnSpan);
+}
+
 - (void)layoutViewsAnimated:(BOOL)animated {
     [UIView animateWithDuration:animated ? 0.35 : 0 animations:^{
         GRGridSize size = [self countRowsAndColumns];
@@ -215,11 +228,12 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
             columnWidth = _gridSize.width + [self padding];
         }
 
-        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - 2, 0);
-        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + 2 + firstVisibleRow;
+        GRGridSpan maxSpan = [self countMaximumSpan];
+        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - (maxSpan.rows * 2), 0);
+        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + (maxSpan.rows * 2) + firstVisibleRow;
 
-        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - 2, 0);
-        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + 2 + firstVisibleColumn;
+        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - (maxSpan.rows * 2), 0);
+        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + (maxSpan.rows * 2) + firstVisibleColumn;
 
         for (UIView <GRGridConstraint> *cell in _cells) {
             CGFloat originX = bounds.origin.x + cell.gridPair.column * (columnWidth + [self padding]);
