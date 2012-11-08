@@ -229,11 +229,11 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
         }
 
         GRGridSpan maxSpan = [self countMaximumSpan];
-        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / rowHeight) - (maxSpan.rows * 2), 0);
-        NSUInteger lastVisibleRow = ceil(self.frame.size.height / rowHeight) + (maxSpan.rows * 2) + firstVisibleRow;
+        NSUInteger firstVisibleRow = MAX(floor(self.contentOffset.y / (rowHeight + [self padding])) - (maxSpan.rows * 2), 0);
+        NSUInteger lastVisibleRow = ceil(self.frame.size.height / (rowHeight + [self padding])) + (maxSpan.rows * 2) + firstVisibleRow;
 
-        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - (maxSpan.rows * 2), 0);
-        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + (maxSpan.rows * 2) + firstVisibleColumn;
+        NSUInteger firstVisibleColumn = MAX(floor(self.contentOffset.x / columnWidth) - (maxSpan.columns * 2), 0);
+        NSUInteger lastVisibleColumn = ceil(self.frame.size.width / columnWidth) + (maxSpan.columns * 2) + firstVisibleColumn;
 
         for (UIView <GRGridConstraint> *cell in _cells) {
             CGFloat originX = bounds.origin.x + cell.gridPair.column * (columnWidth + [self padding]);
