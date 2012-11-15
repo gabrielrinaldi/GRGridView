@@ -29,6 +29,7 @@
 
 @interface GRGridView : UIScrollView
 
+@property (nonatomic) UIView *footerView;
 @property (nonatomic) NSUInteger padding;
 @property (nonatomic) UIEdgeInsets insets;
 @property (nonatomic) CGSize gridSize; // 0 to auto ajust to grid contentSize

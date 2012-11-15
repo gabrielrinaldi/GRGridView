@@ -58,6 +58,10 @@
     [gridView setPadding:10];
     [gridView setInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
     [[self view] addSubview:gridView];
+
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    [footerView setBackgroundColor:[UIColor yellowColor]];
+    [gridView setFooterView:footerView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

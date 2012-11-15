@@ -53,6 +53,22 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
 
 #pragma mark - Getters/Setters
 
+- (void)setFooterView:(UIView *)footerView {
+    if (_footerView == footerView) {
+        return;
+    }
+
+    if (footerView == nil) {
+        [_footerView removeFromSuperview];
+        _footerView = nil;
+    }
+
+    [_footerView removeFromSuperview];
+    _footerView = nil;
+    _footerView = footerView;
+    [self addSubview:_footerView];
+}
+
 - (NSArray *)cells {
     return [NSArray arrayWithArray:_cells];
 }
@@ -271,7 +287,13 @@ GRGridSizeMake(NSUInteger rows, NSUInteger columns) {
             }
         }
 
-        [self setContentSize:CGSizeMake((columnWidth * size.columns) + totalColumnGapSpace + self.insets.left + self.insets.right, (rowHeight * size.rows) + totalRowGapSpace + self.insets.top + self.insets.bottom)];
+        if ([self footerView] != nil) {
+            [[self footerView] setFrame:CGRectMake(0, (rowHeight * size.rows) + totalRowGapSpace + self.insets.top + self.insets.bottom, self.footerView.frame.size.width, self.footerView.frame.size.height)];
+
+            [self setContentSize:CGSizeMake((columnWidth * size.columns) + totalColumnGapSpace + self.insets.left + self.insets.right, (rowHeight * size.rows) + totalRowGapSpace + self.insets.top + self.insets.bottom + self.footerView.frame.size.height)];
+        } else {
+            [self setContentSize:CGSizeMake((columnWidth * size.columns) + totalColumnGapSpace + self.insets.left + self.insets.right, (rowHeight * size.rows) + totalRowGapSpace + self.insets.top + self.insets.bottom)];
+        }
     }];
 }
 
