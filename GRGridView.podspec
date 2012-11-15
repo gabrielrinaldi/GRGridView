@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'A grid view that allows objects to occupy more than one row/column.'
   s.homepage = 'https://github.com/gabrielrinaldi/GRGridView'
   s.authors  = {'Gabriel Rinaldi' => 'gabriel@gabrielrinaldi.me', 'Kristopher Johnson' => 'kris@kristopherjohnson.net'}
-  s.source   = { :git => 'https://github.com/gabrielrinaldi/GRGridView.git', :commit => '15e381716361c437f12737a9555a0bb6d0747176' }
+  s.source   = { :git => 'https://github.com/gabrielrinaldi/GRGridView.git', :commit => 'ee0f90c6c89f83b427c600a2a4fc6b5827ddbc68' }
   s.source_files = 'GRGridView/Classes'
   s.requires_arc = true
   s.platform = :ios
